@@ -1,0 +1,139 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-college-website-frontend-with-a-clear-top-navigation-and-footer-including-the-following-public-pages-sections-home-about-admissions-academics-with-programs-departments-listing-campus-life-news-events-and-contact",
+      "featureTitle": "Create a responsive college website frontend with a clear top navigation and footer, including the following public pages/sections: Home, About, Admissions, Academics (with Programs/Departments listing), Campus Life, News & Events, and Contact.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/AcademicsPage.tsx",
+        "frontend/src/pages/AdmissionsPage.tsx",
+        "frontend/src/pages/CampusLifePage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/NewsEventsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-home-page-that-highlights-key-calls-to-action-and-college-content-blocks-hero-banner-with-primary-cta-e-g-apply-now-3-6-key-stats-highlights-featured-programs-academics-teaser-upcoming-events-teaser-latest-news-teaser-and-a-campus-life-teaser-section",
+      "featureTitle": "Implement a Home page that highlights key calls-to-action and college content blocks: hero banner with primary CTA (e.g., “Apply Now”), 3–6 key stats/highlights, featured programs/academics teaser, upcoming events teaser, latest news teaser, and a campus life teaser section.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-contact-page-with-a-form-name-email-subject-message-that-submits-to-the-backend-and-shows-success-error-states-also-display-static-contact-details-and-office-hours-placeholders",
+      "featureTitle": "Add a Contact page with a form (name, email, subject, message) that submits to the backend and shows success/error states; also display static contact details and office hours placeholders.",
+      "files": [
+        "frontend/src/components/contact/ContactForm.tsx",
+        "frontend/src/hooks/useSubmitInquiry.ts",
+        "frontend/src/pages/ContactPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-news-events-page-that-displays-a-list-of-news-items-and-upcoming-events-using-initial-seed-data-on-first-load-hardcoded-in-frontend-or-fetched-from-backend-but-must-render-as-lists-with-dates-titles-and-short-summaries",
+      "featureTitle": "Build a News & Events page that displays a list of news items and upcoming events using initial seed data on first load (hardcoded in frontend or fetched from backend, but must render as lists with dates, titles, and short summaries).",
+      "files": [
+        "frontend/src/data/newsEventsSeed.ts",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/NewsEventsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-distinctive-collegiate-visual-theme-across-the-site-colors-typography-spacing-components-use-a-classic-academic-style-e-g-deep-maroon-warm-cream-palette-serif-headings-subtle-campus-crest-motifs-and-enforce-it-consistently-across-all-pages",
+      "featureTitle": "Apply a coherent, distinctive collegiate visual theme across the site (colors, typography, spacing, components). Use a classic academic style (e.g., deep maroon + warm cream palette, serif headings, subtle campus/crest motifs) and enforce it consistently across all pages.",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-required-static-image-assets-in-the-frontend-at-frontend-public-assets-generated-and-use-them-in-the-layout-logo-crest-in-header-footer-hero-image-on-home",
+      "featureTitle": "Generate and include required static image assets in the frontend at `frontend/public/assets/generated`, and use them in the layout (logo/crest in header/footer; hero image on Home).",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

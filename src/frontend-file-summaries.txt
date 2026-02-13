@@ -1,0 +1,19 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH color system defining a classic collegiate theme (deep maroon primary, warm cream secondary) with serif headings and consistent spacing utilities.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with Playfair Display serif font, collegiate color palette, elegant shadows, and custom spacing utilities.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup defining all routes (Home, About, Admissions, Academics, Campus Life, News & Events, Contact) with SiteLayout wrapper.",
+  "frontend/src/components/layout/SiteLayout.tsx": "Shared layout wrapper component that renders Header, main content area with Outlet, and Footer consistently across all routes.",
+  "frontend/src/components/layout/Header.tsx": "Responsive header with college crest logo, desktop navigation menu, mobile sheet menu, and Apply Now CTA button with active route highlighting.",
+  "frontend/src/components/layout/Footer.tsx": "Footer component with college info, crest logo, quick links, resources, contact details, social media icons, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/pages/HomePage.tsx": "Home page with hero banner, stats highlights, featured programs, latest news and events teasers (using seed data), campus life section, and application CTA.",
+  "frontend/src/pages/AboutPage.tsx": "About page featuring college history, mission, vision, core values with icons, leadership team, and accreditation information in a clean layout.",
+  "frontend/src/pages/AdmissionsPage.tsx": "Admissions page with application deadlines, four-step process overview, admission requirements checklist, financial aid information, and contact CTA.",
+  "frontend/src/pages/AcademicsPage.tsx": "Academics page displaying 12 academic programs organized by category with degree types, academic excellence highlights, and department overview cards.",
+  "frontend/src/pages/CampusLifePage.tsx": "Campus Life page showcasing six aspects of student life (organizations, athletics, housing, support, arts, recreation) plus community engagement and traditions.",
+  "frontend/src/pages/NewsEventsPage.tsx": "News & Events page with two-column layout displaying news items and upcoming events from seed data with dates, locations, and category badges.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page with ContactForm component and comprehensive contact information cards (address, phone, email, office hours) plus campus visit details.",
+  "frontend/src/components/contact/ContactForm.tsx": "Contact form component with client-side validation, loading states, success/error alerts, and integration with useSubmitInquiry hook.",
+  "frontend/src/hooks/useSubmitInquiry.ts": "Custom hook managing inquiry submission to backend with loading, success, error states and user-friendly error messages.",
+  "frontend/src/data/newsEventsSeed.ts": "Seed data file containing 5 news items and 6 upcoming events with dates, titles, descriptions, locations, and categories for display throughout the site.",
+  "frontend/index.html": "HTML entry point with updated title and Google Fonts preconnect links for Playfair Display (serif) and Inter (sans-serif) fonts."
+}

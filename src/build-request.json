@@ -1,0 +1,150 @@
+{
+  "kind": "build_request",
+  "title": "College website (public pages + inquiries)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive college website frontend with a clear top navigation and footer, including the following public pages/sections: Home, About, Admissions, Academics (with Programs/Departments listing), Campus Life, News & Events, and Contact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visitor can navigate to each of the listed pages from a persistent header navigation on desktop and a mobile menu on small screens.",
+        "Each page has a clear page title/hero area and readable layout on mobile, tablet, and desktop.",
+        "A footer is present on all pages and includes at minimum: address placeholder, contact email/phone placeholders, and quick links to key pages."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a Home page that highlights key calls-to-action and college content blocks: hero banner with primary CTA (e.g., “Apply Now”), 3–6 key stats/highlights, featured programs/academics teaser, upcoming events teaser, latest news teaser, and a campus life teaser section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page includes the specified content blocks with sensible placeholder text in English.",
+        "Primary CTA button is visible above the fold on desktop and near the top on mobile.",
+        "Events and news teasers link to the full News & Events page/sections."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a Contact page with a form (name, email, subject, message) that submits to the backend and shows success/error states; also display static contact details and office hours placeholders.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form validates required fields in the UI before submission.",
+        "On successful submission, the user sees a confirmation message and the form resets.",
+        "On failure, the user sees a non-technical error message and can retry."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create backend support for storing contact form submissions (inquiries) in stable state, and expose methods to (1) create a new inquiry and (2) list inquiries for administrative review.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A backend update method accepts inquiry data and persists it so it remains after canister upgrades (stable state).",
+        "A backend query (or update, if needed) method returns a list of stored inquiries in reverse chronological order (newest first).",
+        "Each inquiry record includes at least: id, createdAt timestamp, name, email, subject, message."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build a News & Events page that displays a list of news items and upcoming events using initial seed data on first load (hardcoded in frontend or fetched from backend, but must render as lists with dates, titles, and short summaries).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "News list renders at least 3 seed news items with title, date, and summary.",
+        "Events list renders at least 3 seed events with title, date/time, and location placeholder.",
+        "Items are displayed in a clean, scannable layout and are responsive."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a coherent, distinctive collegiate visual theme across the site (colors, typography, spacing, components). Use a classic academic style (e.g., deep maroon + warm cream palette, serif headings, subtle campus/crest motifs) and enforce it consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share consistent typography scale, button styles, and section spacing.",
+        "Theme colors are applied consistently (header, links, CTAs, accents) and maintain accessible contrast for body text.",
+        "The UI uses Tailwind styling consistently; no unstyled placeholder pages remain."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Generate and include required static image assets in the frontend at `frontend/public/assets/generated`, and use them in the layout (logo/crest in header/footer; hero image on Home).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a college website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated image files exist under `frontend/public/assets/generated` with the specified filenames.",
+        "Header/footer render the generated crest/logo asset.",
+        "Home hero renders the generated hero image and scales appropriately on different screen sizes."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Do not modify files under the immutable frontend paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui (compose these components instead).",
+    "Use English for all user-facing text."
+  ],
+  "nonGoals": [
+    "Implementing third-party authentication providers (only Internet Identity would be allowed, but is not required for this request).",
+    "Building a full CMS/editor for managing pages, news, events, and programs.",
+    "Integrating external maps/geolocation or social media APIs."
+  ],
+  "imageRequirements": {
+    "required": [
+      "College crest/logo, minimalist vector style, deep maroon and cream (college-crest-logo.dim_512x512.png)",
+      "Campus hero banner illustration/photo-style image, warm daylight, classic academic buildings (campus-hero.dim_1600x600.png)"
+    ],
+    "edits": []
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "College website (public pages + inquiries) — Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create responsive site layout with persistent header navigation (desktop + mobile) and footer, and implement all required public pages (Home, About, Admissions, Academics/Programs, Campus Life, News & Events, Contact).",
+      "acceptanceCriteria": [
+        "A visitor can navigate to each of the listed pages from a persistent header navigation on desktop and a mobile menu on small screens.",
+        "Each page has a clear page title/hero area and readable layout on mobile, tablet, and desktop.",
+        "A footer is present on all pages and includes at minimum: address placeholder, contact email/phone placeholders, and quick links to key pages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell with routing for all required public pages and a shared layout wrapper (header + footer) so navigation is persistent. Use shadcn-ui primitives (e.g., navigation buttons/links and mobile menu container such as Sheet) to ensure accessible responsive navigation; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Add a shared layout component that renders the Header, main content container, and Footer consistently across all routes; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Implement a responsive header with desktop top-nav and a small-screen mobile menu. Use shadcn-ui components (e.g., Button, Sheet/Drawer) to support accessible toggles and focus handling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Implement a footer shown on all pages with address/contact placeholders and quick links to key pages; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create About page with page title/hero and classic collegiate content sections using readable responsive layout; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/AdmissionsPage.tsx",
+          "operation": "create",
+          "description": "Create Admissions page with page title/hero and admissions overview + steps/requirements placeholders; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/AcademicsPage.tsx",
+          "operation": "create",
+          "description": "Create Academics page with page title/hero and a Programs/Departments listing section rendered as responsive cards/list; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/CampusLifePage.tsx",
+          "operation": "create",
+          "description": "Create Campus Life page with page title/hero and student life sections (housing, clubs, athletics, support) with placeholders; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/NewsEventsPage.tsx",
+          "operation": "create",
+          "description": "Create News & Events page route shell with hero/title and sections for News and Upcoming Events lists (data wired in REQ-5); verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "create",
+          "description": "Create Contact page route shell with hero/title and space for the contact form + contact details (form wired in REQ-3); verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement Home page content blocks: hero banner with primary CTA, key stats/highlights, featured programs teaser, upcoming events teaser, latest news teaser, and campus life teaser with links to News & Events.",
+      "acceptanceCriteria": [
+        "Home page includes the specified content blocks with sensible placeholder text in English.",
+        "Primary CTA button is visible above the fold on desktop and near the top on mobile.",
+        "Events and news teasers link to the full News & Events page/sections."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Implement the Home page layout with hero (primary CTA), stats/highlights, and teaser sections for programs, events, news, and campus life. Use shadcn-ui components (e.g., Button, Card, Badge) for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/home/StatsHighlights.tsx",
+          "operation": "create",
+          "description": "Add a responsive stats/highlights block (3–6 items) with placeholder copy; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/home/Teasers.tsx",
+          "operation": "create",
+          "description": "Add reusable teaser blocks for programs, events, news, and campus life with clear calls-to-action linking to the News & Events page sections; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the HomePage route as the default route and ensure teaser links navigate to the News & Events route (and in-page anchors if used); verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add Contact page form (name, email, subject, message) that validates in UI, submits to backend, and shows success/error states plus static contact details and office hours.",
+      "acceptanceCriteria": [
+        "Contact form validates required fields in the UI before submission.",
+        "On successful submission, the user sees a confirmation message and the form resets.",
+        "On failure, the user sees a non-technical error message and can retry."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/contact/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create a Contact form component with client-side required-field validation (name/email/subject/message), submit loading state, success confirmation, and non-technical error state with retry. Use shadcn-ui form inputs (e.g., Input, Textarea, Button, Alert) for consistent UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Render the ContactForm component and add static contact details + office hours placeholders in English alongside the form in a responsive layout; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitInquiry.ts",
+          "operation": "create",
+          "description": "Add a small hook that uses useActor() to call the backend submitInquiry capability and exposes submit/loading/error/success helpers for the Contact form UI. Keep error messages user-friendly; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build News & Events page with seed data lists for news and events (dates, titles, summaries; events include date/time and location placeholder) in a clean responsive layout.",
+      "acceptanceCriteria": [
+        "News list renders at least 3 seed news items with title, date, and summary.",
+        "Events list renders at least 3 seed events with title, date/time, and location placeholder.",
+        "Items are displayed in a clean, scannable layout and are responsive."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/newsEventsSeed.ts",
+          "operation": "create",
+          "description": "Add English seed data for at least 3 news items and at least 3 upcoming events, including title/date/summary and event location placeholders."
+        },
+        {
+          "path": "frontend/src/pages/NewsEventsPage.tsx",
+          "operation": "modify",
+          "description": "Render the seed news and events as two scannable responsive lists/sections. Use shadcn-ui components (e.g., Card, Separator, Badge) for consistent styling and readability; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Populate the Home page 'Latest news' and 'Upcoming events' teasers using the same seed data source and link through to the full News & Events page; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply a consistent classic collegiate visual theme (deep maroon + warm cream, serif headings, consistent spacing/components) across all pages using Tailwind.",
+      "acceptanceCriteria": [
+        "All pages share consistent typography scale, button styles, and section spacing.",
+        "Theme colors are applied consistently (header, links, CTAs, accents) and maintain accessible contrast for body text.",
+        "The UI uses Tailwind styling consistently; no unstyled placeholder pages remain."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define Tailwind base/components/utilities plus global theme tokens (CSS variables) for a classic collegiate palette (deep maroon + warm cream), typographic defaults (serif headings), and consistent section spacing utilities."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme for collegiate typography (serif heading font family) and any additional named color tokens/aliases needed to apply the theme consistently across components and pages."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Apply consistent container widths, section spacing, and typographic hierarchy defaults at the layout level so all pages inherit a coherent theme; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Apply theme styling for header background/links/active state and CTA styling consistent with the collegiate palette; use shadcn-ui components where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Apply theme styling for footer background/typography/link styling consistent with the collegiate palette; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add required generated static images under frontend/public/assets/generated and use them in header/footer (crest/logo) and Home hero (hero image).",
+      "acceptanceCriteria": [
+        "Generated image files exist under `frontend/public/assets/generated` with the specified filenames.",
+        "Header/footer render the generated crest/logo asset.",
+        "Home hero renders the generated hero image and scales appropriately on different screen sizes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/college-crest-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated crest/logo image asset at this exact path and filename so it can be referenced as a static public asset."
+        },
+        {
+          "path": "frontend/public/assets/generated/campus-hero.dim_1600x600.png",
+          "operation": "create",
+          "description": "Add the generated campus hero banner image asset at this exact path and filename so it can be referenced as a static public asset."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Render the crest/logo image from frontend/public/assets/generated/college-crest-logo.dim_512x512.png in the header and ensure it scales well on mobile/desktop; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Render the crest/logo image from frontend/public/assets/generated/college-crest-logo.dim_512x512.png in the footer; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Use the hero image from frontend/public/assets/generated/campus-hero.dim_1600x600.png in the Home hero banner and ensure responsive scaling/cropping across breakpoints; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

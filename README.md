@@ -1,2 +1,3 @@
-# nisha-hospital-website
-Exported from Caffeine project: Nisha Hospital website
+## College website (public pages + inquiries)
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

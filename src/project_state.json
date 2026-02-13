@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create a college website.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- College crest/logo, minimalist vector style, deep maroon and cream (college-crest-logo.dim_512x512.png)\n- Campus hero banner illustration/photo-style image, warm daylight, classic academic buildings (campus-hero.dim_1600x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-college-website-frontend-with-a-clear-top-navigation-and-footer-including-the-following-public-pages-sections-home-about-admissions-academics-with-programs-departments-listing-campus-life-news-events-and-contact",
+      "title": "Create a responsive college website frontend with a clear top navigation and footer, including the following public pages/sections: Home, About, Admissions, Academics (with Programs/Departments listing), Campus Life, News & Events, and Contact.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-home-page-that-highlights-key-calls-to-action-and-college-content-blocks-hero-banner-with-primary-cta-e-g-apply-now-3-6-key-stats-highlights-featured-programs-academics-teaser-upcoming-events-teaser-latest-news-teaser-and-a-campus-life-teaser-section",
+      "title": "Implement a Home page that highlights key calls-to-action and college content blocks: hero banner with primary CTA (e.g., “Apply Now”), 3–6 key stats/highlights, featured programs/academics teaser, upcoming events teaser, latest news teaser, and a campus life teaser section.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-contact-page-with-a-form-name-email-subject-message-that-submits-to-the-backend-and-shows-success-error-states-also-display-static-contact-details-and-office-hours-placeholders",
+      "title": "Add a Contact page with a form (name, email, subject, message) that submits to the backend and shows success/error states; also display static contact details and office hours placeholders.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-news-events-page-that-displays-a-list-of-news-items-and-upcoming-events-using-initial-seed-data-on-first-load-hardcoded-in-frontend-or-fetched-from-backend-but-must-render-as-lists-with-dates-titles-and-short-summaries",
+      "title": "Build a News & Events page that displays a list of news items and upcoming events using initial seed data on first load (hardcoded in frontend or fetched from backend, but must render as lists with dates, titles, and short summaries).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinctive-collegiate-visual-theme-across-the-site-colors-typography-spacing-components-use-a-classic-academic-style-e-g-deep-maroon-warm-cream-palette-serif-headings-subtle-campus-crest-motifs-and-enforce-it-consistently-across-all-pages",
+      "title": "Apply a coherent, distinctive collegiate visual theme across the site (colors, typography, spacing, components). Use a classic academic style (e.g., deep maroon + warm cream palette, serif headings, subtle campus/crest motifs) and enforce it consistently across all pages.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-required-static-image-assets-in-the-frontend-at-frontend-public-assets-generated-and-use-them-in-the-layout-logo-crest-in-header-footer-hero-image-on-home",
+      "title": "Generate and include required static image assets in the frontend at `frontend/public/assets/generated`, and use them in the layout (logo/crest in header/footer; hero image on Home).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a college website.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create backend support for storing contact form submissions (inquiries) in stable state, and expose methods to (1) create a new inquiry and (2) list inquiries for administrative review.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "College website (public pages + inquiries)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
